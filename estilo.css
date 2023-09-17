@@ -1,0 +1,75 @@
+:root{
+    --primary-color: rgb(93, 153, 243);
+    --primary-color-dark: rgb(22, 96, 206);
+    --back-color: rgb(195, 215, 245);
+
+}
+
+* {
+    box-sizing: border-box;
+    outline: 0;
+}
+
+body {
+    margin: 10px;
+    padding: 10px;
+    background: white;
+}
+
+legend {
+    color: black;
+    font-weight: bold;
+}
+
+fieldset {
+    border: 3px solid black;
+    border-radius: 15px;
+    color: white;
+    max-width: 500px;
+}
+
+p{
+    color: black;
+    font-weight: bold;
+    text-align: center;
+}
+
+label{
+    color: black;
+    margin-bottom: 3px;
+}
+
+input {
+    margin-bottom: 3px;
+}
+
+.container {
+    display: inline;
+    text-align: center;
+}
+
+.cad:hover {
+    background: #32CD32;
+}
+
+.pop {
+    background: var(--primary-color);
+    color: white;
+    font-size: 12px;
+    font-weight: 700;
+    height: 40px;
+    cursor: pointer;
+    border-radius: 7px;
+    width: 250px;
+    border-color: var(--back-color);
+    text-align: left;
+}
+
+.pop:hover {
+    background: #32CD32;
+}
+
+#btn-voltar{
+    background: red;
+}
+
