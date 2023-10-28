@@ -10,23 +10,42 @@
 
     <?php
     function gerarPalavra($silabas){
-        //eu sei que para uma pasta com sei lá, 50 imagens, escrever cada uma ali demandaria tempo e é contra-produtivo.
-        //mas como é uma prova de conceito (proof of concept) eu não fiz a função de ler o diretorio inteiro da pasta imagem e gerar automaticamente os caminhos no array.
-        //mas fica como um To Do no futuro caso este TCC seja relevante para ser aperfeiçoado como um programa sério na área de educação.
 
-        $palavras2Silabas = array("imagem/2gato.jpg", "imagem/2pato.jpg", "imagem/2rato.jpg", "imagem/2sapo.jpg", "imagem/2vaca.jpg");
+        //Mas como é uma prova de conceito (proof of concept) eu não fiz a função de ler o diretorio inteiro da pasta
+        // imagem e gerar automaticamente os caminhos no array.
+        //Fica como um "To Do" no futuro caso este TCC seja relevante para ser aperfeiçoado como um programa sério na
+        // área de educação.
+        //Fiz a lista inicial com somente as palavras (dinossauro, camelo, gato e Rã), categoria animais, porém no
+        // futuro, o programa poderia gerar atividades com mais palavras, dividida por campos semânticos (doces,
+        // brinquedos, etc), respeitando o polissílabo, trissilabo, dissilabo e monosilabo.
 
-        $palavras3Silabas = array("imagem/3cavalo.jpg", "imagem/3girafa.jpg", "imagem/3macaco.jpg", "imagem/3ovelha.jpg", "imagem/3tucano.jpg");
+        $palavras1Silabas = array("imagem/1ra.jpg");
 
-        $palavras4Silabas = array("imagem/4borboleta.jpg", "imagem/4dinossauro.jpg", "imagem/4elefante.jpg", "imagem/4hipopotamo.jpg", "imagem/4tartaruga.jpg");
+        $palavras2Silabas = array("imagem/2gato.jpg");
 
-        // Escolher aleatoriamente uma palavra do array relevante.
+        /* exemplo do array com mais palavras - bastando adicionar a imagem na pasta e gerar o caminho:
+
+         * $palavras2Silabas = array("imagem/2gato.jpg", "imagem/2pato.jpg", "imagem/2rato.jpg", "imagem/2sapo.jpg",
+            "imagem/2vaca.jpg");
+         */
+
+        $palavras3Silabas = array("imagem/3camelo.jpg");
+
+        $palavras4Silabas = array("imagem/4dinossauro.jpg");
+
+        //Escolher aleatoriamente uma palavra do array relevante - quando tiver mais palavras no array de cima ou
+        //  até categorias novas (isso para um futuro).
 
         switch ($silabas) {
 
+            case 1:
+                $indiceAleatorio = array_rand($palavras1Silabas); //Randomizei os indices das imagens do array.
+                $imagemSelecionada = $palavras1Silabas[$indiceAleatorio]; //Acessei o elemento correspondente no array.
+                echo '<img src="' . $imagemSelecionada . '" alt="Imagem" /><br />';
+                break;
             case 2:
-                $indiceAleatorio = array_rand($palavras2Silabas); // randomizei os indices das imagens do array.
-                $imagemSelecionada = $palavras2Silabas[$indiceAleatorio]; // Acessei o elemento correspondente no array.
+                $indiceAleatorio = array_rand($palavras2Silabas); //Randomizei os indices das imagens do array.
+                $imagemSelecionada = $palavras2Silabas[$indiceAleatorio]; //Acessei o elemento correspondente no array.
                 echo '<img src="' . $imagemSelecionada . '" alt="Imagem" /><br />';
                 break;
             case 3:
@@ -40,22 +59,21 @@
                 echo '<img src="' . $imagemSelecionada . '" alt="Imagem" /><br />';
                 break;
             default:
-               // $palavra = "Palavra não encontrada"; //como o código é pequeno, coloquei a verificação somente por no futuro estar tratado esta questão.
+                // $palavra = "Palavra não encontrada"; //como o código é pequeno, coloquei a verificação somente
+                // no futuro estar tratado esta questão, tipo try/catch do Java.
         }
 
         //return $palavra;
     }
 
-    // Gerar as palavras com diferentes números de sílabas (1 a 4 sílabas)
-    //$palavras = array(
-
         gerarPalavra(4);
         gerarPalavra(3);
         gerarPalavra(2);
+        gerarPalavra(1);
 
-    //);
 
-    // Cria um código numérico para associar com a atividade do professor
+
+    // Cria um código numérico para associar com o aluno do professor
     $codigoAtividade = rand(1000, 9999);
 
     // Exibir atividade para o professor
@@ -75,7 +93,8 @@
     foreach ($palavras as $palavra) {
         echo "<li>";
         $numSilabas = strlen(preg_replace("/[^aeiou]/i", "", $palavra)) + 1;
-        echo "<input type='text' name='respostas[]' maxlength='$numSilabas' placeholder='____' required> ($numSilabas sílaba)";
+        echo "<input type='text' name='respostas[]' maxlength='$numSilabas' placeholder='____'
+            required> ($numSilabas sílaba)";
         echo "</li>";
     }
     echo "</ol>";
@@ -88,16 +107,11 @@
 
     <br>
 
-    <button type="button" class="pop" onclick='imprimirFolha()'>Imprimir Folha</button><br>
     <button type="button" class="pop" onclick='gerarNovaAtividade()'>Gerar Nova Atividade</button><br>
     <button type="button" class="pop" onclick="window.location.href='index.php'">Voltar</button>
 
 
     <script>
-        function imprimirFolha() {
-            window.print();
-        }
-
         function gerarNovaAtividade() {
             window.location.reload();
         }
