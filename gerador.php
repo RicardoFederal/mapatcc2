@@ -59,8 +59,7 @@
                 echo '<img src="' . $imagemSelecionada . '" alt="Imagem" /><br />';
                 break;
             default:
-                // $palavra = "Palavra não encontrada"; //como o código é pequeno, coloquei a verificação somente
-                // no futuro estar tratado esta questão, tipo try/catch do Java.
+
         }
 
         return $silabas;
@@ -71,19 +70,6 @@
         gerarPalavra(2); echo '<input type="text" size="4" maxlength="4" /></br>';
         gerarPalavra(1); echo '<input type="text" size="1" maxlength="2" /></br>';
 
-
-
-    // Cria um código numérico para associar com o aluno do professor
-    $codigoAtividade = rand(1000, 9999);
-
-    // Exibir atividade para o professor
-    echo "<h3>Atividade para o Professor:</h3>";
-    /*echo "<ol>";
-    foreach ($palavras as $palavra) {
-        echo "<ul>$palavra</ul>";
-    }
-    echo "</ol>";*/
-    echo "<p>Código da Atividade: $codigoAtividade</p>";
 
     /*// Exibir folha de resposta para o aluno
     echo "<h2>Folha de Resposta do Aluno:</h2>";
