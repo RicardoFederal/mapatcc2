@@ -7,7 +7,7 @@
 <body>
 <div style="text-align: center">
     <h2>Atividade de Sondagem - Hipótese de Escrita</h2>
-
+    <h3>Escreva o nome das figuras abaixo:</h3>
     <?php
     function gerarPalavra($silabas){
 
@@ -63,13 +63,13 @@
                 // no futuro estar tratado esta questão, tipo try/catch do Java.
         }
 
-        //return $palavra;
+        return $silabas;
     }
 
-        gerarPalavra(4);
-        gerarPalavra(3);
-        gerarPalavra(2);
-        gerarPalavra(1);
+        gerarPalavra(4); echo '<input type="text" size="10" maxlength="10" /></br>';
+        gerarPalavra(3); echo '<input type="text" size="6" maxlength="6" /></br>';
+        gerarPalavra(2); echo '<input type="text" size="4" maxlength="4" /></br>';
+        gerarPalavra(1); echo '<input type="text" size="1" maxlength="2" /></br>';
 
 
 

@@ -69,7 +69,20 @@ input {
     background: #32CD32;
 }
 
-#btn-voltar{
+.pop-emBreve {
+    background: var(--primary-color);
+    color: white;
+    font-size: 12px;
+    font-weight: 700;
+    height: 40px;
+    cursor: pointer;
+    border-radius: 7px;
+    width: 250px;
+    border-color: var(--back-color);
+    text-align: left;
+}
+
+.pop-emBreve:hover {
     background: red;
 }
 

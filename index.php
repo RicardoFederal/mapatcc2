@@ -27,8 +27,8 @@
         <form id="principal" action="">
 
             <button type="button" class="pop" onclick="window.location.href='gerador.php'">Gerar atividade inicial</button>
-            <button type="button" class="pop">Gerar atividade extra</button>
-            <button type="button" class="pop">Gerar mapa de sondagem</button>
+            <button type="button" class="pop-emBreve">Gerar atividade extra - em breve</button>
+            <button type="button" class="pop-emBreve">Gerar mapa de sondagem - em breve</button>
 
         </form>
     </div>
@@ -38,6 +38,10 @@
 
 <div id="divFrame"></div>
 
+<footer>
+    <p>Author: Ricardo Meyer Viaro<br>
+        TCC elaborado para a Graduação em Engenharia de Software</p>
+</footer>
 
 </body>
 
