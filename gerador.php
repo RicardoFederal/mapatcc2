@@ -11,52 +11,26 @@
     <?php
     function gerarPalavra($silabas){
 
-        //Mas como é uma prova de conceito (proof of concept) eu não fiz a função de ler o diretorio inteiro da pasta
-        // imagem e gerar automaticamente os caminhos no array.
-        //Fica como um "To Do" no futuro caso este TCC seja relevante para ser aperfeiçoado como um programa sério na
-        // área de educação.
         //Fiz a lista inicial com somente as palavras (dinossauro, camelo, gato e Rã), categoria animais, porém no
         // futuro, o programa poderia gerar atividades com mais palavras, dividida por campos semânticos (doces,
         // brinquedos, etc), respeitando o polissílabo, trissilabo, dissilabo e monosilabo.
 
-        $palavras1Silabas = array("imagem/1ra.jpg");
-
-        $palavras2Silabas = array("imagem/2gato.jpg");
-
-        /* exemplo do array com mais palavras - bastando adicionar a imagem na pasta e gerar o caminho:
-
-         * $palavras2Silabas = array("imagem/2gato.jpg", "imagem/2pato.jpg", "imagem/2rato.jpg", "imagem/2sapo.jpg",
-            "imagem/2vaca.jpg");
-         */
-
-        $palavras3Silabas = array("imagem/3camelo.jpg");
-
-        $palavras4Silabas = array("imagem/4dinossauro.jpg");
-
-        //Escolher aleatoriamente uma palavra do array relevante - quando tiver mais palavras no array de cima ou
-        //  até categorias novas (isso para um futuro).
+        //Fica como um "To Do" no futuro caso este TCC seja relevante para ser aperfeiçoado como um programa sério na
+        // área de educação no futuro.
 
         switch ($silabas) {
 
             case 1:
-                $indiceAleatorio = array_rand($palavras1Silabas); //Randomizei os indices das imagens do array.
-                $imagemSelecionada = $palavras1Silabas[$indiceAleatorio]; //Acessei o elemento correspondente no array.
-                echo '<img src="' . $imagemSelecionada . '" alt="Imagem" /><br />';
+                echo '<img src="imagem/1ra.jpg" alt="Imagem" /><br />';
                 break;
             case 2:
-                $indiceAleatorio = array_rand($palavras2Silabas); //Randomizei os indices das imagens do array.
-                $imagemSelecionada = $palavras2Silabas[$indiceAleatorio]; //Acessei o elemento correspondente no array.
-                echo '<img src="' . $imagemSelecionada . '" alt="Imagem" /><br />';
+                echo '<img src="imagem/2gato.jpg" alt="Imagem" /><br />';
                 break;
             case 3:
-                $indiceAleatorio = array_rand($palavras3Silabas);
-                $imagemSelecionada = $palavras3Silabas[$indiceAleatorio];
-                echo '<img src="' . $imagemSelecionada . '" alt="Imagem" /><br />';
+                echo '<img src="imagem/3camelo.jpg" alt="Imagem" /><br />';
                 break;
             case 4:
-                $indiceAleatorio = array_rand($palavras4Silabas);
-                $imagemSelecionada = $palavras4Silabas[$indiceAleatorio];
-                echo '<img src="' . $imagemSelecionada . '" alt="Imagem" /><br />';
+                echo '<img src="imagem/4dinossauro.jpg" alt="Imagem" /><br />';
                 break;
             default:
 
@@ -65,29 +39,21 @@
         return $silabas;
     }
 
-        gerarPalavra(4); echo '<input type="text" size="10" maxlength="10" /></br>';
-        gerarPalavra(3); echo '<input type="text" size="6" maxlength="6" /></br>';
-        gerarPalavra(2); echo '<input type="text" size="4" maxlength="4" /></br>';
-        gerarPalavra(1); echo '<input type="text" size="1" maxlength="2" /></br>';
+        gerarPalavra(4); echo '<input type="text" name="dinossauro" size="10" maxlength="10" /><br />';
+        gerarPalavra(3); echo '<input type="text" name="camelo" size="6" maxlength="6" /><br />';
+        gerarPalavra(2); echo '<input type="text" name="gato" size="4" maxlength="4" /><br />';
+        gerarPalavra(1); echo '<input type="text" name="ra" size="1" maxlength="2" /><br />';
 
+        echo "<h2>Folha de Resposta do Aluno:</h2>";
+        echo "<form method='post' action='verificar_correcao.php'>";
 
-    /*// Exibir folha de resposta para o aluno
-    echo "<h2>Folha de Resposta do Aluno:</h2>";
-    echo "<form method='post' action='verificar_resposta.php'>";
-    echo "<input type='hidden' name='codigo_atividade' value='$codigoAtividade'>";
-    echo "<ol>";
-    foreach ($palavras as $palavra) {
-        echo "<li>";
-        $numSilabas = strlen(preg_replace("/[^aeiou]/i", "", $palavra)) + 1;
-        echo "<input type='text' name='respostas[]' maxlength='$numSilabas' placeholder='____'
-            required> ($numSilabas sílaba)";
-        echo "</li>";
-    }
-    echo "</ol>";
-    echo "<input type='submit' value='Enviar Respostas'>";
-    echo "</form>";
-    */
+            echo '<input type="hidden" name="dinossauro" value="' . $_POST['dinossauro'] . '" />';
+            echo '<input type="hidden" name="camelo" value="' . $_POST['camelo'] . '" />';
+            echo '<input type="hidden" name="gato" value="' . $_POST['gato'] . '" />';
+            echo '<input type="hidden" name="ra" value="' . $_POST['ra'] . '" />';
 
+        echo "<input type='submit' value='Enviar Respostas'>";
+        echo "</form>";
 
     ?>
 

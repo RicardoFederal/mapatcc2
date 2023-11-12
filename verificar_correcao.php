@@ -1,29 +1,44 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <title>Verificação da Correção</title>
+    <title>Correção</title>
 </head>
 <body>
-<h1>Verificação da Correção</h1>
+<h1>Verificação</h1>
 
 <?php
-// Verifica se o formulário foi enviado
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Obtém a correção enviada pelo aluno e a palavra correta
-    $correcao = $_POST["correcao"];
-    $palavraCorreta = $_POST["palavra_correta"];
+    // Obter respostas do formulário
+    $respostaDinossauro = $_POST['dinossauro'];
+    $respostaCamelo = $_POST['camelo'];
+    $respostaGato = $_POST['gato'];
+    $respostaRa = $_POST['ra'];
 
-    // Verifica se a correção está correta
-    if (strtolower($correcao) === strtolower($palavraCorreta)) {
-        echo "<p>Parabéns! Sua correção está correta.</p>";
-    } else {
-        echo "<p>Sua correção está incorreta. A palavra correta é: <strong>" . $palavraCorreta . "</strong></p>";
-    }
+    // Respostas corretas (você pode ajustar conforme necessário)
+    $corretaDinossauro = 'dinossauro';
+    $corretaCamelo = 'camelo';
+    $corretaGato = 'gato';
+    $corretaRa = 'ra';
+
+    // Verificar respostas
+    $corretoDinossauro = ($respostaDinossauro == $corretaDinossauro);
+    $corretoCamelo = ($respostaCamelo == $corretaCamelo);
+    $corretoGato = ($respostaGato == $corretaGato);
+    $corretoRa = ($respostaRa == $corretaRa);
+
+    // Exibir feedback
+    echo "<h2>Feedback:</h2>";
+    echo "Dinossauro: " . ($corretoDinossauro ? "Correto" : "Incorreto") . "<br />";
+    echo "Camelo: " . ($corretoCamelo ? "Correto" : "Incorreto") . "<br />";
+    echo "Gato: " . ($corretoGato ? "Correto" : "Incorreto") . "<br />";
+    echo "Rã: " . ($corretoRa ? "Correto" : "Incorreto") . "<br />";
 } else {
-    echo "<p>Por favor, envie a correção através do formulário.</p>";
+    // Se não for uma solicitação POST, redirecionar ou lidar com isso de acordo com sua lógica
+    header("Location: index.php"); // Redireciona para a página principal (ajuste conforme necessário)
+    exit();
 }
 ?>
 
-<p><a href="atividade.php">Tentar outra atividade</a></p>
+
 </body>
 </html>
