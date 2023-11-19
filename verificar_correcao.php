@@ -8,13 +8,12 @@
 
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Obter respostas do formulário
+
     $respostaDinossauro = $_POST['dinossauro'];
     $respostaCamelo = $_POST['camelo'];
     $respostaGato = $_POST['gato'];
     $respostaRa = $_POST['ra'];
 
-    // Respostas corretas (você pode ajustar conforme necessário)
     $corretaDinossauro = 'dinossauro';
     $corretaCamelo = 'camelo';
     $corretaGato = 'gato';
@@ -32,11 +31,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     echo "Camelo: " . ($corretoCamelo ? "Correto" : "Incorreto") . "<br />";
     echo "Gato: " . ($corretoGato ? "Correto" : "Incorreto") . "<br />";
     echo "Rã: " . ($corretoRa ? "Correto" : "Incorreto") . "<br />";
-} else {
-    // Se não for uma solicitação POST, redirecionar ou lidar com isso de acordo com sua lógica
-    header("Location: index.php"); // Redireciona para a página principal (ajuste conforme necessário)
-    exit();
 }
+
+
+//else {
+    // Se não for uma solicitação POST, redirecionar ou lidar com isso de acordo com sua lógica
+   // header("Location: index.php"); // Redireciona para a página principal (ajuste conforme necessário)
+    ////}
+
+
+
+
+
+
+
+
+
 ?>
 
 
