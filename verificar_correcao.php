@@ -34,10 +34,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 
 
-//else {
+else {
     // Se não for uma solicitação POST, redirecionar ou lidar com isso de acordo com sua lógica
-   // header("Location: index.php"); // Redireciona para a página principal (ajuste conforme necessário)
-    ////}
+    header("Location: index.php"); // Redireciona para a página principal (ajuste conforme necessário)
+    }
 
 
 

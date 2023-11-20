@@ -44,14 +44,30 @@
         gerarPalavra(2); echo '<input type="text" name="gato" size="4" maxlength="4" /><br />';
         gerarPalavra(1); echo '<input type="text" name="ra" size="1" maxlength="2" /><br />';
 
-        echo "<h2>Folha de Resposta do Aluno:</h2>";
+    echo "<h2>Folha de Resposta do Aluno:</h2>";
+    echo "<form method='post' action='verificar_correcao.php'>";
 
+    echo '<input type="hidden" name="dinossauro" value="' . $_POST['dinossauro'] . '" />';
+    echo '<input type="hidden" name="camelo" value="' . $_POST['camelo'] . '" />';
+    echo '<input type="hidden" name="gato" value="' . $_POST['gato'] . '" />';
+    echo '<input type="hidden" name="ra" value="' . $_POST['ra'] . '" />';
+
+    echo "<input type='submit' value='Enviar Respostas'>";
+    echo "</form>";
 
     ?>
 
     <br>
 
+    <button type="button" class="pop" onclick='gerarNovaAtividade()'>Gerar Nova Atividade</button><br>
+    <button type="button" class="pop" onclick="window.location.href='index.php'">Voltar</button>
 
+
+    <script>
+        function gerarNovaAtividade() {
+            window.location.reload();
+        }
+    </script>
 </div>
 </body>
 </html>
