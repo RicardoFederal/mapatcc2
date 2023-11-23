@@ -36,13 +36,6 @@
 
 <p></p>
 
-<div id="divFrame"></div>
-
-<footer>
-    <p>Author: Ricardo Meyer Viaro<br>
-        TCC elaborado para a Graduação em Engenharia de Software</p>
-</footer>
-
 </body>
 
 </html>

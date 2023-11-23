@@ -14,18 +14,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $respostaGato = $_POST['gato'];
     $respostaRa = $_POST['ra'];
 
-    $corretaDinossauro = 'dinossauro';
-    $corretaCamelo = 'camelo';
-    $corretaGato = 'gato';
-    $corretaRa = 'ra';
+    // Possíveis respostas dos alunos:
+    $corretas = array(
+        'dinossauro' => array('dinossauro', 'dinosaro', 'dinossaro', 'dinosarro', 'dinossauru', 'dinosaru',
+            'dinossaru', 'dinusaro', 'dinussaru'),
 
-    // Verificar respostas
-    $corretoDinossauro = ($respostaDinossauro == $corretaDinossauro);
-    $corretoCamelo = ($respostaCamelo == $corretaCamelo);
-    $corretoGato = ($respostaGato == $corretaGato);
-    $corretoRa = ($respostaRa == $corretaRa);
+        'camelo' => array('camelo'),  // Adicione mais respostas corretas se necessário
+        'gato' => array('gato'),      // Adicione mais respostas corretas se necessário
+        'ra' => array('ra')           // Adicione mais respostas corretas se necessário
+    );
 
-    // Exibir feedback
+    $corretoDinossauro = in_array($respostaDinossauro, $corretas['dinossauro']);
+    $corretoCamelo = in_array($respostaCamelo, $corretas['camelo']);
+    $corretoGato = in_array($respostaGato, $corretas['gato']);
+    $corretoRa = in_array($respostaRa, $corretas['ra']);
+
+
     echo "<h2>Feedback:</h2>";
     echo "Dinossauro: " . ($corretoDinossauro ? "Correto" : "Incorreto") . "<br />";
     echo "Camelo: " . ($corretoCamelo ? "Correto" : "Incorreto") . "<br />";
@@ -33,22 +37,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     echo "Rã: " . ($corretoRa ? "Correto" : "Incorreto") . "<br />";
 }
 
-
-else {
-    // Se não for uma solicitação POST, redirecionar ou lidar com isso de acordo com sua lógica
-    header("Location: index.php"); // Redireciona para a página principal (ajuste conforme necessário)
-    }
-
-
-
-
-
-
-
-
-
 ?>
-
 
 </body>
 </html>
+
