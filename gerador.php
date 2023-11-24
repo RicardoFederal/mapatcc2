@@ -12,10 +12,10 @@
 
     <form action="verificar_correcao.php" method="post">
 
-        <img src="imagem/4dinossauro.jpg" alt="Imagem" /><br/> <input type="text" name="dinossauro" /><br/>
-        <img src="imagem/3camelo.jpg" alt="Imagem" /><br/>     <input type="text" name="camelo" /><br/>
-        <img src="imagem/2gato.jpg" alt="Imagem" /><br/>       <input type="text" name="gato" /><br/>
-        <img src="imagem/1ra.jpg" alt="Imagem" /><br/>         <input type="text" name="ra" /><br/>
+        <img src="imagem/4dinossauro.jpg" alt="Imagem" /><br/> <input type="text" name="palavraDinossauro" /><br/>
+        <img src="imagem/3camelo.jpg" alt="Imagem" /><br/>     <input type="text" name="palavraCamelo" /><br/>
+        <img src="imagem/2gato.jpg" alt="Imagem" /><br/>       <input type="text" name="palavraGato" /><br/>
+        <img src="imagem/1ra.jpg" alt="Imagem" /><br/>         <input type="text" name="palavraRa" /><br/>
 
         <input type='submit' value='Enviar Respostas'>
     </form>
@@ -23,10 +23,10 @@
 
     <?php
 
-    echo '<input type="hidden" name="dinossauro" value="' . $_POST["dinossauro"] . '" />';
-    echo '<input type="hidden" name="camelo" value="' . $_POST["camelo"] . '" />';
-    echo '<input type="hidden" name="gato" value="' . $_POST["gato"] . '" />';
-    echo '<input type="hidden" name="ra" value="' . $_POST["ra"] . '" />';
+    echo '<input type="hidden" name="dinossauro" value="' . $_POST["palavraDinossauro"] . '" />';
+    echo '<input type="hidden" name="camelo" value="' . $_POST["palavraCamelo"] . '" />';
+    echo '<input type="hidden" name="gato" value="' . $_POST["palavraGato"] . '" />';
+    echo '<input type="hidden" name="ra" value="' . $_POST["palavraRa"] . '" />';
 
     //echo "Você digitou: ", $_POST["dinossauro"], "<br>";
     //echo "Você digitou: ", $_POST["camelo"], "<br>";
