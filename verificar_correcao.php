@@ -45,7 +45,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $silabico_com_valor_sonoro = array(
         'palavraDinossauro' => array('dosu', 'ioao', 'dnsr'),
 
-        'palavraCamelo' => array('kmo', 'aeo'),
+        'palavraCamelo' => array('kmo', 'kmu', 'aeo', 'aeu'),
 
         'palavraGato' => array('gt', 'ao'),
 
@@ -104,13 +104,161 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $tipoRa = 'silábico sem valor';
     }
 
-
-
     echo "<h2>Feedback:</h2>";
-    echo "Dinossauro: $tipoDinossauro<br />";
-    echo "Camelo: $tipoCamelo<br />";
-    echo "Gato: $tipoGato<br />";
-    echo "Rã: $tipoRa<br />";
+    echo "Dinossauro: $tipoDinossauro<br/>";
+    echo "Camelo: $tipoCamelo<br/>";
+    echo "Gato: $tipoGato<br/>";
+    echo "Rã: $tipoRa<br/>";
+
+    $contagemAlfabeticoDinossauro = 0;
+    $contagemAlfabeticoCamelo = 0;
+    $contagemAlfabeticoGato = 0;
+    $contagemAlfabeticoRa = 0;
+
+    $contagemSilabicoAlfabeticoDinossauro = 0;
+    $contagemSilabicoAlfabeticoCamelo = 0;
+    $contagemSilabicoAlfabeticoGato = 0;
+    $contagemSilabicoAlfabeticoRa = 0;
+
+    $contagemSilabicoComValorSonoroDinossauro = 0;
+    $contagemSilabicoComValorSonoroCamelo = 0;
+    $contagemSilabicoComValorSonoroGato = 0;
+    $contagemSilabicoComValorSonoroRa = 0;
+
+    $contagemSilabicoSemValorDinossauro = 0;
+    $contagemSilabicoSemValorCamelo = 0;
+    $contagemSilabicoSemValorGato = 0;
+    $contagemSilabicoSemValorRa = 0;
+
+    $silabico_sem_valor = 0;
+
+    // Verificação de cada resposta para "Dinossauro"
+    foreach ($alfabetico['palavraDinossauro'] as $possivelResposta) {
+        if ($respostaDinossauro == $possivelResposta) {
+            $contagemAlfabeticoDinossauro++;
+        }
+    }
+
+    foreach ($silabico_alfabetico['palavraDinossauro'] as $possivelResposta) {
+        if ($respostaDinossauro == $possivelResposta) {
+            $contagemSilabicoAlfabeticoDinossauro++;
+        }
+    }
+
+    foreach ($silabico_com_valor_sonoro['palavraDinossauro'] as $possivelResposta) {
+        if ($respostaDinossauro == $possivelResposta) {
+            $contagemSilabicoComValorSonoroDinossauro++;
+        }
+    }
+
+    foreach ($silabico_sem_valor['palavraDinossauro'] as $possivelResposta) {
+        if ($respostaDinossauro == $possivelResposta) {
+            $$contagemSilabicoSemValorDinossauro++;
+        }
+    }
+
+
+    // Verificação de cada resposta para "Camelo"
+    foreach ($alfabetico['palavraCamelo'] as $possivelResposta) {
+        if ($respostaCamelo == $possivelResposta) {
+            $contagemAlfabeticoCamelo++;
+        }
+    }
+
+    foreach ($silabico_alfabetico['palavraCamelo'] as $possivelResposta) {
+        if ($respostaCamelo == $possivelResposta) {
+            $contagemSilabicoAlfabeticoCamelo++;
+        }
+    }
+
+    foreach ($silabico_com_valor_sonoro['palavraCamelo'] as $possivelResposta) {
+        if ($respostaCamelo == $possivelResposta) {
+            $contagemSilabicoComValorSonoroCamelo++;
+        }
+    }
+
+    foreach ($silabico_sem_valor['palavraCamelo'] as $possivelResposta) {
+        if ($respostaCamelo == $possivelResposta) {
+            $$contagemSilabicoSemValorCamelo++;
+        }
+    }
+
+    // Verificação de cada resposta para "Gato"
+    foreach ($alfabetico['palavraGato'] as $possivelResposta) {
+        if ($respostaGato == $possivelResposta) {
+            $contagemAlfabeticoGato++;
+        }
+    }
+
+    foreach ($silabico_alfabetico['palavraGato'] as $possivelResposta) {
+        if ($respostaGato == $possivelResposta) {
+            $contagemSilabicoAlfabeticoGato++;
+        }
+    }
+
+    foreach ($silabico_com_valor_sonoro['palavraGato'] as $possivelResposta) {
+        if ($respostaGato == $possivelResposta) {
+            $contagemSilabicoComValorSonoroGato++;
+        }
+    }
+
+    foreach ($silabico_sem_valor['palavraGato'] as $possivelResposta) {
+        if ($respostaGato == $possivelResposta) {
+            $$contagemSilabicoSemValorGato++;
+        }
+    }
+
+
+    // Verificação de cada resposta para "Ra"
+    foreach ($alfabetico['palavraRa'] as $possivelResposta) {
+        if ($respostaRa == $possivelResposta) {
+            $contagemAlfabeticoRa++;
+        }
+    }
+
+    foreach ($silabico_alfabetico['palavraRa'] as $possivelResposta) {
+        if ($respostaRa == $possivelResposta) {
+            $contagemSilabicoAlfabeticoRa++;
+        }
+    }
+
+    foreach ($silabico_com_valor_sonoro['palavraRa'] as $possivelResposta) {
+        if ($respostaRa == $possivelResposta) {
+            $contagemSilabicoComValorSonoroRa++;
+        }
+    }
+
+    foreach ($silabico_sem_valor['palavraRa'] as $possivelResposta) {
+        if ($respostaRa == $possivelResposta) {
+            $$contagemSilabicoSemValorRa++;
+        }
+    }
+
+
+    // Determinação da categoria predominante
+    $categorias = [
+        'Silábico sem Valor' => $contagemSilabicoSemValorDinossauro + $contagemSilabicoSemValorCamelo +
+            $contagemSilabicoSemValorGato + $contagemSilabicoSemValorRa,
+        'Silábico com Valor Sonoro' => $contagemSilabicoComValorSonoroDinossauro +
+            $contagemSilabicoComValorSonoroCamelo + $contagemSilabicoComValorSonoroGato +
+            $contagemSilabicoComValorSonoroRa,
+        'Silábico-Alfabético' => $contagemSilabicoAlfabeticoDinossauro + $contagemSilabicoAlfabeticoCamelo
+            + $contagemSilabicoAlfabeticoGato + $contagemSilabicoAlfabeticoRa,
+        'Alfabético' => $contagemAlfabeticoDinossauro + $contagemAlfabeticoCamelo +
+            $contagemAlfabeticoGato + $contagemAlfabeticoRa
+    ];
+
+    // Categoria com a contagem mais alta
+    $categoriaPredominante = array_keys($categorias, max($categorias))[0];
+
+    echo "<h2>Categoria Predominante: $categoriaPredominante</h2>";
+
+    //teste unitário
+    //echo "<pre>";
+    //print_r($categorias);
+    //echo "</pre>";
+
+
 }
 ?>
 
