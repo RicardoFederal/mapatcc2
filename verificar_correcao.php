@@ -2,8 +2,10 @@
 <html lang="pt-BR">
 <head>
     <title>Correção</title>
+    <link rel="stylesheet" href="estilo.css">
 </head>
 <body>
+<div style="text-align: center">
 <h1>Verificação</h1>
 
 <?php
@@ -104,11 +106,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $tipoRa = 'silábico sem valor';
     }
 
-    echo "<h2>Feedback:</h2>";
-    echo "Dinossauro: $tipoDinossauro<br/>";
-    echo "Camelo: $tipoCamelo<br/>";
-    echo "Gato: $tipoGato<br/>";
-    echo "Rã: $tipoRa<br/>";
+    echo "Dinossauro: $respostaDinossauro<br/>";
+    echo "Hipótese: $tipoDinossauro<br/><br/>";
+    echo "Camelo: $respostaCamelo<br/>";
+    echo "Hipótese: $tipoCamelo<br/><br/>";
+    echo "Gato: $respostaGato<br/>";
+    echo "Hipótese: $tipoGato<br/><br/>";
+    echo "Rã: $respostaRa<br/>";
+    echo "Hipótese: $tipoRa<br/><br/>";
+
 
     $contagemAlfabeticoDinossauro = 0;
     $contagemAlfabeticoCamelo = 0;
@@ -253,15 +259,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     echo "<h2>Categoria Predominante: $categoriaPredominante</h2>";
 
-    //teste unitário
-    //echo "<pre>";
-    //print_r($categorias);
-    //echo "</pre>";
+    }
 
-
-}
 ?>
 
+    <button type="button" onclick="gravar()">Gravar dados</button>
+    <br/><br/>
+    <button type="button" onclick="window.location.href='index.php'">Início</button>
+
+</div>
 </body>
 </html>
 
