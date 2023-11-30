@@ -9,6 +9,30 @@
 <h1>Verificação</h1>
 
 <?php
+
+function gravarDados($nomeAluno, $serieAluno, $respostaDinossauro, $tipoDinossauro,
+                     $respostaCamelo, $tipoCamelo, $respostaGato, $tipoGato, $respostaRa, $tipoRa, $categoriaPredominante) {
+
+    $servername = "s127.0.0.1";
+    $username = "root";
+    $password = "";
+    $dbname = "db_sondagem";
+
+    $conn = new mysqli($servername, $username, $password, $dbname);
+
+    if ($conn->connect_error) {
+        die("Conexão falhou: " . $conn->connect_error);
+    }
+
+    // enviar dados na tabela 'aplicacoes'
+    $sql = "INSERT INTO aplicacoes (nome, serie, dinossauro, camelo, gato, ra, created_at, updated_at, categoria_predominante)
+            VALUES ('$nomeAluno', $serieAluno, '$respostaDinossauro', '$respostaCamelo', '$respostaGato', '$respostaRa',
+                    NOW(), NOW(), '$categoriaPredominante')";
+
+    $conn->close();
+}
+
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $respostaDinossauro = $_POST['palavraDinossauro'];
@@ -266,7 +290,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 ?>
 
-    <button type="button" onclick="gravar()">Gravar dados</button>
+    <button type="button" onclick="gravarDados()">Gravar dados</button>
     <br/><br/>
     <button type="button" onclick="window.location.href='index.php'">Início</button>
 
