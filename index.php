@@ -26,7 +26,7 @@
     <div class="container">
         <form id="principal" action="">
 
-            <button type="button" class="pop" onclick="window.location.href='gerador.php'">Gerar atividade inicial</button>
+            <button type="button" class="pop" onclick="capturaNome()">Gerar atividade inicial</button>
             <button type="button" class="pop-emBreve">Gerar atividade extra - em breve</button>
             <button type="button" class="pop-emBreve">Gerar mapa de sondagem - em breve</button>
 
@@ -35,7 +35,13 @@
 </fieldset>
 
 <p></p>
+<script>
+    function capturaNome() {
 
+        let nomeAluno = prompt("Digite o nome do aluno: ");
+        let serieAluno = prompt("Digite a série do aluno: ");
+        window.location.href = 'gerador.php?nomeAluno=' + nomeAluno + '&serieAluno=' + serieAluno;
+        }
+</script>
 </body>
-
 </html>

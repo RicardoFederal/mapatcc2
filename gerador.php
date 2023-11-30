@@ -1,18 +1,23 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <title>Atividade de Sondagem - Hipótese de Escrita</title>
+    <title>Atividade de Sondagem</title>
     <link rel="stylesheet" href="estilo.css">
 </head>
 <body>
 <fieldset style = "width: 50%; margin: 0 auto;">
 <div style="text-align: center">
-    <h3>Atividade de Sondagem - Hipótese de Escrita</h3>
+    <?php
+    $nomeAluno = $_GET['nomeAluno'] ?? 'Aluno';
+    $serieAluno = $_GET['serieAluno'] ?? 'Série';
+    echo "<h3>Atividade de Sondagem - Aluno: $nomeAluno - $serieAluno série</h3>";
+    ?>
     <p>Escreva o nome das figuras abaixo:</p>
 
 
     <form action="verificar_correcao.php" method="post">
-
+        <input type="hidden" name="nomeAluno" value="<?php echo $nomeAluno; ?>">
+        <input type="hidden" name="serieAluno" value="<?php echo $serieAluno; ?>">
         <img src="imagem/4dinossauro.jpg" alt="Imagem" /> <input type="text" name="palavraDinossauro" /><br/><br/>
         <img src="imagem/3camelo.jpg" alt="Imagem" />     <input type="text" name="palavraCamelo" /><br/><br/>
         <img src="imagem/2gato.jpg" alt="Imagem" />       <input type="text" name="palavraGato" /><br/><br/>

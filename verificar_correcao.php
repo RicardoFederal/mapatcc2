@@ -106,6 +106,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $tipoRa = 'silábico sem valor';
     }
 
+    echo "Nome do Aluno: " . htmlspecialchars($_POST['nomeAluno']) . "<br/>";
+    echo "Série do Aluno: " . htmlspecialchars($_POST['serieAluno']) . "<br/><br/>";
+
     echo "Dinossauro: $respostaDinossauro<br/>";
     echo "Hipótese: $tipoDinossauro<br/><br/>";
     echo "Camelo: $respostaCamelo<br/>";
